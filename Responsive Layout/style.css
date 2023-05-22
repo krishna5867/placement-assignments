@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding: 10px 20px;
+
+}
+.nav{
+    display: flex;
+    height: 60px;
+
+}
+.logo{
+    background: rgb(109, 150, 237);
+    width: 20%;
+    margin-right: 20px;
+}
+.nav-links{
+    background: darkgray;
+    width: 80%;
+}
+.hero{
+    margin-top: 20px;
+    height: 250px;
+    background:gray;
+
+}
+.boxs{
+    margin-top: 20px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.box{
+    width: 32%;
+    background: lightblue;
+
+}
+.footer{
+    margin-top: 20px;
+    height: 200px;
+    background: darkgray;
+}
+
+@media screen and (max-width: 576px) {
+    .boxs{
+        display: block;
+    }
+    .box{
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+    }
+    .footer{
+        margin-top: 190px;
+    }
+}
