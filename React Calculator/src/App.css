@@ -1,0 +1,50 @@
+.App {
+  border: 2px solid #ccc;
+  background-color: #ccc;
+}
+
+.calculator {
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  margin: 180px auto;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.calculator input {
+  grid-column: 1 / -1;
+  padding: 10px;
+  font-size: 18px;
+  text-align: right;
+  border: 2px solid #ccc;
+  outline: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.calculator button {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background-color: #d4d4d4;
+}
+
+.calculator button.operator {
+  background-color: #f2a900;
+  color: white;
+}
+
+.calculator button.operator:hover {
+  background-color: #e69500;
+}

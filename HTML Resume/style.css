@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 700px;
+    display: flex;
+}
+
+.lside {
+    flex-wrap: wrap;
+    flex: 0 0 250px; 
+    width: 250px;
+    min-height: 100vh;
+    background-color: rgb(179, 175, 175);
+}
+
+.rside {
+    flex-wrap: wrap;
+    flex: 0 0 450px; 
+    width: 450px;
+    background-color: rgb(189, 185, 185);
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+img{
+    width: 100%;
+}
+.name{
+    margin: 16px
+}
+.name h4{
+    margin-top: 5px;
+    text-align: center;
+}
+.info{
+    margin: 0 20px;
+}
+
+.certificate{
+    margin: 20px 20px;
+}
+.certificate h4,p{
+    margin: 5px;
+}
+.skills{
+    margin: 10px 20px;
+}
+.skills li{
+    margin: 9px 30px;
+}
+
+/* Right Side */
+.profile p{
+    font-size: 17px;
+}
+.profile,.experience{
+    margin: 20px;
+}
+.profile h4{
+    margin-top: 10px;
+}
+.exp{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.experience h3{
+    margin: 10px 0;
+}
+.experience li{
+    margin: 5px 20px;
+}
+.tech{
+    font-weight: 600;
+}
+.edu-date{
+    display: flex;
+    justify-content: space-between;
+}

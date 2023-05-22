@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="songName">music-1.mp3</h2>
+        <div class="imgbox">
+            <img src="images/images (1).jfif" alt="">
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-backward prev playy"></i>
+            <i class="fa-solid fa-play play"></i>
+            <i class="fa-solid fa-forward forward play"></i>
+        </div>
+        <audio src="music/music-1.mp3"></audio>
+    </div>
+    <script>
+        const img = document.querySelector("img");
+        const prev = document.querySelector(".prev");
+        const play = document.querySelector(".play");
+        const forward = document.querySelector(".forward");
+        const audio = document.querySelector("audio");
+        const songName = document.getElementById("songName");
+
+        const images = [
+            "images (2).jfif",
+            "images (3).jfif",
+            "images (4).jfif",
+            "images (5).jfif",
+            "images (6).jfif",
+            "images (7).jfif",
+            "images (1).jfif"
+        ];
+
+        const songs = [
+            "music/music-1.mp3",
+            "music/music-2.mp3",
+            "music/music-3.mp3",
+            "music/music-4.mp3",
+            "music/music-5.mp3"
+        ];
+
+        let currentIndex = 0;
+        let isPlaying = false;
+
+        const togglePlay = () => {
+            isPlaying = !isPlaying;
+            isPlaying ? playAudio() : pauseAudio();
+        };
+
+        const playAudio = () => {
+            audio.play();
+            play.classList.replace("fa-play", "fa-pause");
+            img.classList.add("rotate");
+        };
+
+        const pauseAudio = () => {
+            audio.pause();
+            play.classList.replace("fa-pause", "fa-play");
+            img.classList.remove("rotate");
+        };
+
+        const loadNextSong = () => {
+            currentIndex = (currentIndex + 1) % songs.length;
+            audio.src = songs[currentIndex];
+            playAudio();
+            img.src = `images/${images[currentIndex]}`;
+            updateSongName();
+        };
+
+        const loadPrevSong = () => {
+            currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+            audio.src = songs[currentIndex];
+            playAudio();
+            img.src = `images/${images[currentIndex]}`;
+            updateSongName();
+        };
+        const updateSongName = () => {
+            songName.textContent = songs[currentIndex].substring(6);
+        };
+
+        play.addEventListener("click", togglePlay);
+        forward.addEventListener("click", loadNextSong);
+        prev.addEventListener("click", loadPrevSong);
+    </script>
+</body>
+</html>
